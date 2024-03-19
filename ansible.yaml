@@ -1,4 +1,9 @@
 ---
+- hosts: webserver
+  gather_facts: no
+  tasks:
+    - name: update ubuntu servers
+      command: "sudo apt update"
     - name: Install python
       apt:
         name: python3-pip
