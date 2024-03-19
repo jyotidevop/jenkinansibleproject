@@ -34,10 +34,9 @@
       docker_compose:
         project_src: /home/ubuntu/
         build: false
-      register: output
+        stopped: true
     - name: start container
       docker_compose:
         project_src: /home/ubuntu/
         build: false
-        stopped: true
-      register: output
+    
