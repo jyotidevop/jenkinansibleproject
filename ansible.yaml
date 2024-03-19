@@ -31,12 +31,5 @@
           path: /home/ubuntu/
         state: present
     - name: down container
-      docker_compose:
-        project_src: /home/ubuntu/
-        build: false
-        stopped: true
-    - name: start container
-      docker_compose:
-        project_src: /home/ubuntu/
-        build: false
+      command: "docker compose down && docker compose up -d"
     
