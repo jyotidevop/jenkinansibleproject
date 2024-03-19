@@ -28,7 +28,7 @@
         state: directory
     - name: copy the file to remot-server
       copy:
-        src: /home/ubuntu/project/
+        src: /home/ubuntu/
         dest: /home/ubuntu/jyoti/
     - name: Build an image and push
       docker_image:
