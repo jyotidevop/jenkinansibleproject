@@ -19,24 +19,17 @@
       service:
         name: docker
         state: started
-    - name: create directory
-      file:
-        path: /home/ubuntu/jyoti
-        owner: ubuntu
-        group: ubuntu
-        mode: '0755'
-        state: directory
     - name: copy the file to remot-server
       copy:
         src: /home/ubuntu/
-        dest: /home/ubuntu/jyoti/
+        dest: /home/ubuntu/
         remote_src: yes
     - name: Build an image and push
       docker_image:
         name: jyotichaudhary90/web
         source: build
         build:
-          path: /home/ubuntu/jyoti/
+          path: /home/ubuntu/
         state: present
 
     - name: Create container
