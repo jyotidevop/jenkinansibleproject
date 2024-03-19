@@ -19,10 +19,6 @@
       service:
         name: docker
         state: started
-    - name: copy the file to remot-server
-      copy:
-        src: /home/ubuntu/
-        dest: /home/ubuntu/
     - name: Build an image and push
       docker_image:
         name: jyotichaudhary90/web
