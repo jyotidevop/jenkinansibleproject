@@ -5,3 +5,4 @@
        copy:
           src: /home/ubuntu/
           dest: /home/ubuntu/
+          remote_src: yes
