@@ -23,7 +23,6 @@
       copy:
         src: /home/ubuntu/
         dest: /home/ubuntu/
-        remote_src: yes
     - name: Build an image and push
       docker_image:
         name: jyotichaudhary90/web
