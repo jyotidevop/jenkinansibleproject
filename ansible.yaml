@@ -30,11 +30,14 @@
         build:
           path: /home/ubuntu/
         state: present
-
-    - name: Create container
-      docker_container:
-        name: staticweb
-        image: jyotichaudhary90/web:latest
-        ports:
-           - 80:80
-        state: started
+    - name: down container
+      docker_compose:
+        project_src: /home/ubuntu/
+        build: false
+      register: output
+    - name: start container
+      docker_compose:
+        project_src: /home/ubuntu/
+        build: false
+        stopped: true
+      register: output
