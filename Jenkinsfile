@@ -15,6 +15,14 @@ pipeline {
             }
            }
         }
+         stage("copy docker file from jenkin server to webserver server"){
+            steps {
+              sshagent(['web_server']) {
+                sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.83.233'
+                sh 'scp /var/lib/jenkins/workspace/agent/Dockerfile ubuntu@172.31.83.233:/home/ubuntu/'
+            }
+           }
+         }
         stage("run ansible playbook to deploy container on remote server"){
             steps {
               sshagent(['ansible_demo']) {
