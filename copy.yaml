@@ -1,8 +1,1 @@
----
-- hosts: webserver
-  tasks:
-     - name: copy the file to remot-server
-       copy:
-          src: /home/ubuntu/
-          dest: /home/ubuntu/
-          remote_src: yes
+
