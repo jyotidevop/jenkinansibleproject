@@ -31,5 +31,5 @@
           path: /home/ubuntu/
         state: present
     - name: down container
-      command: "docker compose down && docker compose up -d"
+      shell: "docker compose up -d"
     
