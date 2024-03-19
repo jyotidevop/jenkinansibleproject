@@ -15,13 +15,17 @@
       apt:
         name: docker.io
         state: present
+    - name: Install docker compose
+      apt:
+        name: docker-compose
+        state: present
     - name: Start docker service
       service:
         name: docker
         state: started
     - name: Build an image and push
       docker_image:
-        name: jyotichaudhary90/web
+        name: jyotichaudhary90/web:latest
         source: build
         build:
           path: /home/ubuntu/
@@ -30,7 +34,7 @@
     - name: Create container
       docker_container:
         name: staticweb
-        image: jyotichaudhary90/web
+        image: jyotichaudhary90/web:latest
         ports:
            - 80:80
         state: started
